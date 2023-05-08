@@ -66,7 +66,7 @@ rl.on('line', (line) => {
 			break;
 		case 'r':
 			console.log("\n^^^^^^^ Tu Pesonaje" + pet.name.toUpperCase() + " esta Viejito .  Lo tubimos q mandar al Asilo! ^^^^^^^\n");
-			rl.question('\nNow, how do you want to name your NEW friend? ', initiatePet);
+			rl.question('\n cómo quieres nombrar a tu nuevo Personaje', initiatePet);
       break;
 		case 'q':
 			console.log("\n~~~~~~~ Nos Vemos! ~~~~~~~~");

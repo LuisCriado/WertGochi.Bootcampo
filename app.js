@@ -124,7 +124,7 @@ function changeMood(situation){
 		$jumbo.animate({height: "830px"}, 2000);
 		$porgImg.animate({width: "100%", height: "100%"}, 2000);
 		$jumbo.append($title);
-		$title.text("Your porg has died");
+		$title.text("TU PERSONAJE HA MUUERTO");
 		$title.css({color: "#7b0000", textShadow: "-1px -1px 0 rgb(168, 168, 168), 1px -1px 0 rgba(88, 69, 170, 0.5), -1px 1px 0 rgba(88, 69, 170, 0.5), 1px 1px 0 rgba(88, 69, 170, 0.5)"});
 		$title.animate({fontSize: "5rem", marginTop: "30px"}, 2000, finalTouches);
 		
@@ -177,7 +177,7 @@ function gameEnd() {
 }
 
 function fanfares(){
-	$('.caption').text("Your porg is a champion!");
+	$('.caption').text("Tu Personaje es el Mejor");
 	$('.caption').css({color: "#f38a00", fontSize: "2rem"});
 	$('.jumbotron').css("background", "linear-gradient(45deg, #FF9800, #FF5722)");
 	$play_button.addClass("disabled");
