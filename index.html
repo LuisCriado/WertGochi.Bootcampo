@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Integrando todo el codigo aprendido hasta el momento">
+    <meta name="keywords" content="Proyecto de Bootcamp">
+		<meta name="author" content="Luis Criado">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Wertsgotchi</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this html -->
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main role="main">
+
+      <!-- Color and Image section -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container container-fluid color_section">
+         <h1 class="caption">Coleciona 30 puntos para Ganar el Juego</h1>
+        	<div id="porg">
+        		<img class="img-fluid rounded mx-auto d-block" style="display: none">
+        	</div>
+        </div>
+      </div>
+			
+     <!-- Feedback and button section -->
+      <div class="container output">
+        <div class="row justify-content-center">
+        	<div class="col col-sm-10 col-lg-7">
+           <div>
+           		<h2 class="name">noname</h2>
+           		<div class="top_actions float-right">
+								<span id="battlesWon">Batallas Ahora
+						 		<span class="battleNumber"></span></span>	
+         				<button id="battle" class="btn btn-sm btn-light">LUCHAS DE 1° ORDEN</button>
+          			<button id="newGame" class="btn btn-sm btn-block btn-info float-right">Personaje Nuevo</button>
+						 </div>
+           </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+					<div class="col col-sm-10 col-lg-7">
+						<div id="results" class="row">
+							<div class="col">
+								<h6>Felicidad</h6>
+								<img  src="./img/3.png" alt="happiness">
+								<p id="happiness"></p>
+							</div>
+							<div class="col">
+								<h6>Comida</h6>
+								<img  src="./img/1.png" alt="food">
+								<p id="food"></p>
+							</div>
+							<div class="col">
+								<h6>Energia</h6>
+								<img  src="./img/2.png" alt="energy">
+								<p id="energy"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col col-sm-10 col-lg-7">
+						<div id="actions" class="row">
+							<div class="col">
+								<p id="play"><a class="btn btn-sm btn-block btn-info disabled" role="button">JUAGAR</a></p>
+							</div>
+							<div class="col">
+								<p id="feed"><a class="btn btn-sm btn-block btn-info disabled" role="button">COMER</a></p>
+							</div>
+							<div class="col">
+								<p id="sleep"><a class="btn btn-sm btn-block btn-info disabled" role="button">Dormi</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+       	<div class="row justify-content-center">
+					<div class="warnings col col-sm-10 col-lg-7">
+						<p>Aca encontraras las advertencias para tu personaje</p>
+					</div>
+				</div>
+        <div class="row  justify-content-center">
+         <div class="col col-sm-10 col-lg-7">
+           <div class="exits">
+							<button id="reset" class="btn btn-sm btn-outline-light">Reeset</button>
+							<button id="quit" class="btn btn-sm btn-outline-light" data-toggle="modal" data-target="#quitModal">Sair</button>
+           </div>
+          </div>
+        </div>
+       
+        <hr>
+
+      </div> <!-- /container -->
+			
+			<!-- Quit Modal -->
+			<div class="modal fade" id="quitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Quieres salir?</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+						Click <strong>"Cancelar"</strong> Vuelve con tu querido Personaje, <strong>"Salir"</strong> Para terminar el Juego y llevarte una imagen de tu personaje.
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+							<button id="quitConfirm" type="button" class="btn btn-dark">Salir</button>
+						</div>
+					</div>
+				</div>
+			</div> <!-- Enf of Quit Modal -->
+			
+			<!-- Name Modal -->
+			<div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Cual es nombre de tu mascota?</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form action="">
+								<div class="form-group">
+									<input type="text" class="form-control" id="answerNameInput" placeholder="Ingrese su nombre">
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+							<button id="porgNameSave" type="button" class="btn btn-info">Grabar</button>
+						</div>
+					</div>
+				</div>
+			</div> <!-- Enf of Quit Modal -->
+			
+    </main>
+
+    <footer class="container">
+      <p><a href="https://www.linkedin.com/in/luis-criado-b4a28a243/" target="_blank">&copy; Luis Criado	</a></p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="tamagotchi.js"></script>
+		<script src="app.js"></script>
+  </body>
+</html>
